@@ -1,7 +1,7 @@
 # AMP Controller unter Wine — Anleitung
 
 App: (SR)AMP Controller V1.1.9
-Gerät: DSP-3004D (LAN, IP 192.168.178.30)
+Gerät: DSP-3004D
 Wine-Prefix: ~/.wine-ampcontroller
 
 ---
@@ -27,12 +27,12 @@ Wine-Prefix: ~/.wine-ampcontroller
    ```
 
 4. Hostnamen auf die LAN-IP zeigen lassen (sonst wird das Gerät nicht gefunden).
-   In `/etc/hosts` die Zeile `127.0.1.1 cachyos-x8664` ändern zu:
+   In `/etc/hosts` die Zeile `127.0.0.1 cachyos-x8664` ändern zu (Ip addresse / hostname zu deiner abändern!):
    ```
    192.168.178.26  cachyos-x8664
    ```
 
-5. CJK-Schrift einrichten (sonst Kästchen statt Zeichen wie ℃):
+5. CJK-Schrift einrichten (sonst Kästchen/Tofu statt Zeichen wie ℃):
    ```bash
    cp /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc \
       ~/.wine-ampcontroller/drive_c/windows/Fonts/
@@ -67,11 +67,12 @@ App neu starten. Beim sauberen Start verbindet sie sich richtig mit dem Gerät.
 
 3. Enable software rendering (otherwise windows are black):
    ```bash
+   
    wine reg add "HKCU\Software\Microsoft\Avalon.Graphics" /v DisableHWAcceleration /t REG_DWORD /d 1 /f
    ```
 
 4. Point the hostname to your LAN IP (otherwise the device is not found).
-   In `/etc/hosts`, change the line `127.0.1.1 cachyos-x8664` to:
+   In `/etc/hosts`, change the line `127.0.0.1 cachyos-x8664` to like (Change ip to match yours!):
    ```
    192.168.178.26  cachyos-x8664
    ```
