@@ -1,7 +1,7 @@
 # AMP Controller unter Wine — Anleitung
 
 App: (SR)AMP Controller V1.1.9
-Gerät: DSP-3004D
+Getestetes-Gerät: DSP-3004D
 Wine-Prefix: ~/.wine-ampcontroller
 
 ---
